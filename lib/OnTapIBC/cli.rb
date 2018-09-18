@@ -1,7 +1,22 @@
+
 class OnTapIBC::CLI
 
   def start
-    list_beers
+    # list_beers
+    make_beers
+    display_beers
+  end
+
+  def self.make_beers
+    beers_array = OnTapIBC::Taps.current_list
+    OnTapIBC::Beers.create_from_scrape(beers_array)
+  end
+
+  def display_beers
+    OnTapIBC::Beers.all.each do |beer|
+      puts "#{beer.name} - #{beer.abv}"
+    end
+
   end
 
   # def list_beers
