@@ -1,0 +1,26 @@
+PATH
+  remote: .
+  specs:
+    OnTapIBC (0.1.0)
+      colorize
+      nokogiri
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colorize (0.8.1)
+    mini_portile2 (2.3.0)
+    nokogiri (1.8.4)
+      mini_portile2 (~> 2.3.0)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  OnTapIBC!
+  bundler (~> 1.16)
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.16.4
