@@ -3,7 +3,7 @@ class OnTapIBC::Beers
 
   @@all = []
 
-  def initialize(beers_hash = )
+  def initialize(beers_hash)
     beers_hash.each {|key, value| self.send(("#{key}="), value)}
     @@all << self
   end

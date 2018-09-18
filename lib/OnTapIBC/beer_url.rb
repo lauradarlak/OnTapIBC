@@ -11,6 +11,8 @@ class OnTapIBC::Url
     urls
   end
 
+# OnTapIBC::Beers.all.each do |beer|
+
 
   def self.assign_urls
     scrape_urls.map do |url|

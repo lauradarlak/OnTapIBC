@@ -10,6 +10,7 @@ class OnTapIBC::CLI
   def self.make_beers
     beers_array = OnTapIBC::Taps.current_list
     OnTapIBC::Beers.create_from_scrape(beers_array)
+    binding.pry
   end
 
   def display_beers
