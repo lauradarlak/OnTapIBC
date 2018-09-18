@@ -6,8 +6,8 @@ class OnTapIBC::CLI
 
   # def list_beers
   #   puts "What's on tap at Ithaca Beer Company"
-  #   puts "Updated on Sep 14, 4:46 PM EDT"
-  #   beers_array = OnTapIBC::Taps.updated_list
+  #   puts "#{OnTapIBC::Taps.updated_last}"
+  #   beers_array = OnTapIBC::Taps.current_list
   #   beers_array.map.with_index(1) do |beer, index|
   #     if !beer.short_desc.include?("5BBL")
   #       puts "#{index}. #{beer.name} - #{beer.abv}"
@@ -22,19 +22,21 @@ class OnTapIBC::CLI
   def list_beers
     puts "What's on tap at Ithaca Beer Company"
     puts "#{OnTapIBC::Taps.updated_last}"
-
     beers_array = OnTapIBC::Taps.current_list
-    bbl = []
-    not_bbl = []
-    beers_array.each do |beer|
-      if beer.short_desc.include?("5BBL")
-        bbl << beer
-      else
-        not_bbl << beer
-      end
-
+    five = []
+    nofive = []
+    beers_array.map do |beer|
+      beer.short_desc.include?("5BBL") ? five << beer : nofive << beer
     end
-
+    puts "Flagship and Seasonal Beers"
+    nofive.map.with_index(1) do |beer, index|
+      puts "#{index}. #{beer.name} - #{beer.abv}"
+    end
+    puts "----------------------------"
+    puts "5 Barrel Brews"
+    five.map.with_index(1) do |beer, index|
+        puts "#{index}. #{beer.name} - #{beer.abv}"
+    end
 
   end
 
