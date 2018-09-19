@@ -1,5 +1,5 @@
 class OnTapIBC::Taps
-  attr_accessor :name, :abv, :short_desc
+  attr_accessor :name, :abv, :short_desc, :url
 
   def self.current_list
     self.scrape_menu
