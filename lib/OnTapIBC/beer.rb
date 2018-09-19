@@ -9,4 +9,5 @@ class OnTapIBC::Beer
 
   def self.save
     @@all << self
+  end
 end

@@ -25,7 +25,7 @@ class OnTapIBC::CLI
     beers_array = OnTapIBC::Taps.current_list
     five = []
     nofive = []
-    beers_array.map do |beer|
+    beers_array.each do |beer|
       beer.short_desc.include?("5BBL") ? five << beer : nofive << beer
     end
     puts "Flagship and Seasonal Beers"
